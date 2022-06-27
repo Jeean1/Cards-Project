@@ -2,16 +2,25 @@
 
 import React, { useState } from 'react';
 import quotes from "./quotes.json"
-import Funcionalidad from './Funcionalidad';
+import ButtomComponent from './ButtomComponent';
 
 const QuoteBox = () => {
 
-    let ramdon = Math.floor(Math.random() * quotes.quotes.length)
-    const [count, setCount] = useState(ramdon)
+
+
+
+    let ramdonQuotes = Math.floor(Math.random() * quotes.quotes.length)
+    const [count, setCount] = useState(ramdonQuotes)
 
     const toggleButtom = () => {
         return setCount(count + 1)
     }
+
+
+
+
+
+
 
     let colors = ["#845EC2", "#FF6F91", "#00C9A7", "#005B44", "#D03B29", "#FF8066", "#296073", "#4FFBDF", "#2C73D2", "#926C00"]
 
@@ -45,7 +54,7 @@ const QuoteBox = () => {
                         <p>{quotes.quotes[count].author}</p>
 
 
-                        <Funcionalidad
+                        <ButtomComponent
                             colorRamdon={colorRamdon}
                             toggleButtom={toggleButtom}
                         />
